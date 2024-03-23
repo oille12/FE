@@ -8,19 +8,26 @@
     <style>
         body {
             margin: 0;
+            padding-top: 120px;
         }
-        .section-header {
+        .section-header { 
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             width: 100%;
             background-color: rgb(246,245,239);
             height: 120px;
+            border-top: 2px solid black;
+            z-index: 1;
         }
         .inner-header{
-            width: 1100px;
             height: 100%;
             margin: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+
         }
         .logo {
             width: 75px;
@@ -31,7 +38,6 @@
             height: 100%;
         }
         .space-nav {
-
         }
         .space-nav li{
             display: inline-block;            
@@ -39,6 +45,7 @@
         .top-nav {
             height: 45px;
             font-size: 13px;
+            font-weight: 300;
             display: flex;
             justify-content: flex-end;
         }
@@ -60,6 +67,8 @@
         .bottom-nav {
             display: flex;
             justify-content: flex-end;
+            font-size: 14px;
+            font-weight: 300;
         }    
         .bottom-nav a{
             color: black;
@@ -70,8 +79,10 @@
             color: #669900;
             text-decoration: underline;
         }
+
         /* section1 */
         .section-one {
+            border-top: 2px solid black;
             background-image: url(./images/section1_back.jpeg);
             width: 100%;
             height: 32vw; /* 가로크기의 32% */
@@ -81,20 +92,20 @@
         }
         .section-one .text-img {
             position: absolute;
-            left: 20%;
-            top: 25%;
-            width: 18%;
+            left: 15%;
+            top: 31%;
+            width: 16%;
         }
         .section-one .detail-btn {
             position: absolute;
-            left: 24%;
+            left: 17%;
             top: 65%;
-            width: 10%;
+            width: 12%;
             background: transparent;
             color: rgb(0, 48, 0);
             border: 2xp solid rgb(0, 48, 0);
             border-radius: 5px;
-            padding: 10px;
+            padding: 9px;
         }
         .section-one .detail-btn:hover {
             background-color: rgb(0, 48, 0);
@@ -105,35 +116,342 @@
         }
         .section-one .choux-latte {
             position: absolute;
-            top: 10%;
-            left: 45%;
-            width: 13%;
+            top: 22%;
+            left: 40%;
+            width: 14%;
         }
         .section-one .pistachio-latte {
             position: absolute;
-            top: 55%;
-            left: 58%;
-            width: 14%;
+            top: 40%;
+            left: 52%;
+            width: 18%;
 
         }
         .section-one .castella-blended {
             position: absolute;
-            top: 60%;
-            left: 40%;
-            width: 14%;
-
+            top: 20%;
+            left: 59%;
+            width: 18%;
         }
         .section-one .ricotta-sandwich {
             position: absolute;
-            top: 20%;
-            left: 50%;
-            width: 14%;
-
+            top: 50%;
+            left: 67%;
+            width: 19%;
         }
+        .notice-bar {
+            width: 100%;
+            position: relative;
+            margin: 0;
+            height: 62px;
+        }
+        .notice-bar .left-bar {
+            width: 50%;
+            height: 62px;
+            background-color: #111;
+            position: absolute;
+            left: 0;
+        }
+        .left-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .left-three-inner-text {
+            float: left;
+            position: absolute;
+            left: 30%;
+            width: 100%;
+            height: 17px;
+            display: flex;
+            align-items: center;
+        }
+        .left-three-inner-text dt {
+            width: 65px;
+            height: 17px;
+            position: absolute;
+        }
+        .left-three-inner-text dd {
+            position: absolute;
+            width: 520px;
+            text-indent: 15px;
+            overflow: hidden;
+        }
+        .notice-list {
+            direction: ltr;
+            font-size: 13px;
+        }
+        .notice-list li {
+            line-height: 24px;
+            height: 17px;
+        }
+        .notice-list a {
+            color: white;
+            text-decoration: none;
+        }
+        .notice-list a:hover {
+            text-decoration: underline;
+        }
+        .left-plus-icon {
+            width: 17px;
+            height: 17px;
+            position: absolute;
+            right: 20px;
+        }
+        .notice-bar .right-bar {
+            width: 50%;
+            height: 62px;
+            background-color: #f6f5ef;
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: center;
+        }
+        .right-bar-inner {
+            position: relative;
+            width: 100%;
+            height: 17px;
+        }
+        .right-bar-inner a {
+            position: absolute;
+            left: 10%;
+            width: 50%;
+            height: 100%;
+            color: black;
+            display: flex;
+            text-align: center;
+        }
+        .right-bar-text {
+            height: 100%;
+            margin: 0;
+            float: left;
+            font-weight: 600;
+            display: flex;
+            text-align: center;
+        }
+        .rignt-plus-icon {
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            right: 20px;
+        }
+
+        /* section-two */
+        .section-two {
+            width: 100%;
+            height: 240px;
+            background-color: #1e3932;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            clear: both;
+            box-sizing: border-box; 
+        }
+        .section-two-inner {
+            max-width: 1080px;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .section-two-logo {
+            width: 16%;
+            float: left;
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .section-two-logo img {
+            width: 176px;
+            vertical-align: top;
+            max-width: 100%;
+        }
+        .section-two-contents {
+            box-sizing: border-box;
+            float: left;
+            width: calc(83.7% - 80px);
+            padding-right: 30px;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .cont1 {
+            position: relative;
+            margin-bottom: 22px;
+            border-bottom: 1px solid gray;
+        }
+        .top-text {
+            margin-bottom: 12px;
+        }
+        .top-text h2 {
+            line-height: 1.4;
+            margin-bottom: 12px;
+            font-size: 26px;
+            font-weight: normal;
+        }
+        .top-text p {
+            line-height: 1.4;
+            font-size: 17px;
+        }
+        .top-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 0;
+            font-size: 0;
+        }
+        .top-btn a {
+            box-sizing: border-box;
+            display: inline-block;
+            height: 38px;
+            line-height: 36px;
+            padding-left: 18px;
+            padding-right: 18px;
+            font-size: 14px;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .top-btn a:hover {
+            text-decoration: underline;
+        }
+        .bottom-btn-join {
+            background-color: #00704a;
+            border: 2px solid #00704a;
+        }
+        .bottom-btn-login {
+            margin-left: 9px;
+            background-color: transparent;
+            border: 2px solid #fff;
+        }
+        .cont2 {
+            position: relative;
+        }
+        .cont2-text p {
+            line-height: 1.4;
+            font-size: 14px;
+        }
+        .cont2-btn {
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 183px;
+            height: 38px;
+            line-height: 36px;
+            text-align: center;
+            font-size: 14px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+        }
+        .cont2-btn a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            text-decoration: none;
+        }
+        .cont2-btn a:hover {
+            text-decoration: underline;
+        }
+
+        /* section-three */
+        .section-three {
+            clear: both;
+        }
+        .section-three {
+            max-width: 100%;
+            margin: 0;
+            width: 100%;
+            height: 550px;
+            position: relative;
+            background: url(./images/section-three-bg.jpeg) center/cover no-repeat;
+        }
+        .three-inner-img img{
+            position: absolute;
+            top: 15%;
+            left: 30%;
+            width: 22%;
+        }
+        .three-inner-text {
+            position: absolute;
+            right: 25%;
+            top: 33%;
+        }
+        .three-inner-text img {
+            width: 90%;
+        }
+        .three-inner-btn {
+            margin-top: 34px;
+        }
+        .three-inner-btn a {
+            padding: 7px 24px;
+            width: 125px;
+            height: 38px;
+            color: #91674a;
+            border: 2px solid #91674a;
+            border-radius: 5px;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        .three-inner-btn a:hover {
+            text-decoration: underline;
+            color: white;
+            background-color: #91674a;
+            transition: all 0.7s;
+        }
+
+        /* section-four */
+        .section-four {
+            height: 400px;
+            background: url(./images/section-four-bg.jpeg) no-repeat center top;
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+        }
+        .section-four-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .four-inner-title {
+            padding-top: 58px;
+            padding-left: 28%;
+        }
+        .four-inner-conts img {
+            width: 120%;
+            max-width: none;
+            vertical-align: top;
+            position: absolute;
+            bottom: 0;
+            right: -10%;
+        }
+        .four-inner-btn {
+            position: relative;
+            max-width: 1080px;
+            margin: 40px auto;
+            padding-left: 315px;
+            box-sizing: border-box;
+        }
+        .four-btn-inner a {
+            text-decoration: none;
+            color: #b87643;
+            border: 2px solid #b87643;
+            padding: 8px 24px;
+            border-radius: 5px;
+        }
+        .four-btn-inner a:hover {
+            text-decoration: underline;
+            color: #fff;
+            background-color: #b87643;
+            transition: all 0.7s;
+        }
+        
     </style>
 </head>
 <body>
 
+    <!-- header -->
     <header class="section-header">
         <div class="inner-header">
             <div class="logo">
@@ -164,15 +482,126 @@
         </div>
     </header>
 
+    <!-- section-one -->
     <div class="section-one">
         <img src="./images/section1_text.png" alt="" class="text-img">
         <button class="detail-btn">자세히 보기</button>
         <img src="./images/choux_cream_latte.png" alt="" class="choux-latte">
-        <img src="./images/pistachio_cream_latte.png" alt="" class="pistachio-latte">
         <img src="./images/castella_straw_blended.png" alt="" class="castella-blended">
+        <img src="./images/pistachio_cream_latte.png" alt="" class="pistachio-latte">
         <img src="./images/ricotta_sandwich.png" alt="" class="ricotta-sandwich">
-
     </div>
     
+    <!-- notice-bar -->
+    <div class="notice-bar">
+        <div class="left-bar">
+            <div class="left-inner">
+
+                <dl class="left-three-inner-text">
+                    <dt>
+                        <img src="./images/notice_ttl.png" alt="공지사항">
+                    </dt>
+                    <dd>
+                        <ul class="notice-list">
+                            <li style="">
+                                <a href="#">개인정보처리방침 개정 안내</a>
+                            </li>
+                            <li style="display: none;">
+                                <a href="#">시스템 개선 및 서비스 점검 안내</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+
+                <p class="left-plus-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="#ffffff" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+                    </svg>
+                </p>
+
+            </div>
+        </div>
+        <div class="right-bar">
+            <div class="right-bar-inner">
+                <a href="#">
+                    <p class="right-bar-text">스타벅스 프로모션</p>
+                    <svg class="rignt-plus-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- section-two -->
+    <div class="section-two">
+        <div class="section-two-inner">
+            <div class="section-two-logo">
+                <img src="./images/rewards-logo.png" alt="Starbucks Rewards">
+            </div>
+            <div class="section-two-contents">
+                <div class="cont1">
+                    <div class="top-text">
+                        <h2>스타벅스만의 특별한 혜택, 스타벅스 리워드</h2>
+                        <p>
+                            스타벅스 회원이세요? 로그인을 통해 나만의 리워드를 확인해보세요.<br>
+                            스타벅스 회원이 아니세요? 가입을 통해 리워드 혜택을 즐기세요.
+                        </p>
+                    </div>
+                    <div class="top-btn">
+                        <a class="bottom-btn-join" href="#">회원가입</a>
+                        <a class="bottom-btn-login" href="#">로그인</a>
+                    </div>
+                </div>
+
+                <div class="cont2">
+                    <div class="cont2-text">
+                        <p>
+                            회원 가입 후, 스타벅스 e-Gift Card를 "나에게 선물하기"로 구매하시고, 편리하게 등록하세요!<br>
+                            카드를 등록하여 스타벅스 리워드 회원이 되신 후, 첫 구매를 하시면 무료 음료쿠폰을 드립니다!
+                        </p>
+                    </div>
+                    <div class="cont2-btn">
+                        <a href="#">e-Gift Card 선물하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section-three -->
+    <div class="section-three">
+        <div class="section-three-inner">
+            <div class="three-inner-img">
+                <img src="./images/section-three-coffee.png" alt="">
+            </div>
+            <div class="three-inner-text">
+                <img src="./images/section-three-txt.png" alt="">
+                <div class="three-inner-btn">
+                    <a href="#">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section-four -->
+    <div class="section-four">
+        <div class="section-four-inner">
+            <div class="four-inner-title">
+                <img src="./images/section-four-title.png" alt="EL SALVADOR">
+            </div>
+            <div class="four-inner-conts">
+                <img src="./images/section-four-coffee.png" alt="">
+            </div>
+            <div class="four-inner-btn">
+                <div class="four-btn-inner">
+                    <a href="#">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 100px;"></div>
+
 </body>
 </html>
